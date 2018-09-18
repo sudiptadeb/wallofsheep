@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wall of sheep</title>
+    <link rel="stylesheet" href="bulma.min.css"/>
+</head>
+<body>
+<div id="app">
+    <section class="hero section has-text-centered">
+        <div class="hero-head">
+            <div class="container">
+                <h1 class="title has-text-danger">
+                    Wall of Sheep
+                </h1>
+            </div>
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="table-container is-centered">
+                    <table class="table has-text-white" style="margin: auto;background: transparent">
+                        <thead>
+                        <tr>
+                            <td class="has-text-white">Username</td>
+                            <td class="has-text-white">Password</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="sheep in sheeps">
+                            <td>{{sheep.name}}</td>
+                            <td>{{sheep.pass}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            greeting: 'Welcome to your Vue.js app!',
+            sheeps: [{name: 'Dummy', pass: 'dummypass'}]
+        }
+    });
+
+    // add to app.sheeps to update
+    app.sheeps = [{name: 'Idiot', pass: 'IdiotPass'}];
+</script>
+</body>
+<style>
+    html, body, #app {
+        height: 100%;
+        background: black;
+    }
+</style>
+</html>
